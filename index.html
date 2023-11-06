@@ -1,55 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZachZambuto.dev</title>
-    <link href="style.css" rel="stylesheet" type="text/css"/>
-    <link href="https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise" rel="stylesheet" type="text/css"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="fav/favicon-16x16.png">
+    <link rel="manifest" href="fav/site.webmanifest">
+    <script src="https://kit.fontawesome.com/a52818325b.js" crossorigin="anonymous"></script>
+    <title>Zach Zambuto</title>
 </head>
+
 <body>
-  <div id="typedtext"></div>
-  <script>
-            // set up text to print, each item in array is new line
-        var aText = new Array(
-        "Hello I am Zach", 
-        "I am a Software Engineer and Consultant at Slalom",
-        "This page is a work in progress",
-        "For now check out my linkedin: https://www.linkedin.com/in/zacharyzambuto/",
-        "<3"
-        );
-        var iSpeed = 100; // time delay of print out
-        var iIndex = 0; // start printing array at this posision
-        var iArrLength = aText[0].length; // the length of the text array
-        var iScrollAt = 20; // start scrolling up at this many lines
-        
-        var iTextPos = 0; // initialise text position
-        var sContents = ''; // initialise contents variable
-        var iRow; // initialise current row
-        
-        function typewriter()
-        {
-        sContents =  ' ';
-        iRow = Math.max(0, iIndex-iScrollAt);
-        var destination = document.getElementById("typedtext");
-        
-        while ( iRow < iIndex ) {
-        sContents += aText[iRow++] + '<br />';
-        }
-        destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
-        if ( iTextPos++ == iArrLength ) {
-        iTextPos = 0;
-        iIndex++;
-        if ( iIndex != aText.length ) {
-        iArrLength = aText[iIndex].length;
-        setTimeout("typewriter()", 500);
-        }
-        } else {
-        setTimeout("typewriter()", iSpeed);
-        }
-        }
-        typewriter();
-  </script>
+    <main>
+        <div class="d-none d-md-block desktop-nav">
+            <nav id="navbar"
+                class="sticky-top main-navbar d-flex justify-content-flex-start align-items-center p-5 flex-nowrap">
+                <div class="d-flex flex-grow-1 flex-nowrap align-items-center main-nav-buttons">
+                    <div class="nav-buttons">
+                        <a class="home-button text-uppercase" href="#home">
+                            Zach Zambuto
+                        </a>
+                    </div>
+                    <div class="main-title">
+
+                    </div>
+                </div>
+
+                <div class="media-link-buttons">
+                    <a class="mx-3 media-link-buttons-text" href="#about">ABOUT</a>
+                    <a class="mx-3 media-link-buttons-text" href="#expirence">EXPERIENCE</a>
+                    <a class="mx-3 media-link-buttons-text" href="#education">EDUCATION</a>
+                    <a class="mx-3 media-link-buttons-text" href="#projects">PROJECTS</a>
+                    <a class="mx-3 media-link-buttons-text" href="#values">VALUES</a>
+                    <a class="mx-3 media-link-buttons-text" href="#contact">CONTACT</a>
+                </div>
+            </nav>
+        </div>
+
+        <div class="d-block d-md-none mobile-nav">
+            <nav class="navbar navbar-expand-lg navbar-light sticky-top main-navbar">
+                <div class="container-fluid">
+                    <div class="navbar-brand">
+                        <a href="#home">
+
+                            <h1 class="text-uppercase">Zach Zambuto</h1>
+                        </a>
+                    </div>
+                    <button class="navbar-toggler custom-toggler me-3" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon">
+                            <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="mx-2" href="#about">ABOUT</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="mx-2" href="#music">MUSIC</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="mx-2" href="#lessons">LESSONS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="mx-2" href="#">CONTACT</a>
+                            </li>
+                        </ul>
+                        <div>
+                            <a href="https://www.youtube.com/watch?v=EaV9WiNqABA">
+                                <img src="svg/youtube-logo.svg" width="50" height="50"> </img>
+                            </a>
+                            <a href="https://open.spotify.com/album/2hxZiRB8NEk4HpYLW2aNW4?si=9XKvEioET4uvApu3Lp9yKA">
+                                <img src="svg/spotify-logo.svg" width="50" height="50"> </img>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+
+        <div id="home" class="section hero-container d-flex justify-content-center align-items-center">
+            <h1 class="px-4 py-3 hero-text text-uppercase">Zach Zambuto</h1>
+
+            <h1 class="px-4 py-3 hero-text-subtitle">
+                <a href="" class="typewrite" data-period="2000"
+                    data-type='[ "Software Engineer", "Adventurer", "Creative" ]'>
+                    <span class="wrap"></span>
+                </a>
+            </h1>
+        </div>
+
+        <div id="about" class="section about-container d-flex align-items-center flex-row-reverse">            
+            
+            <div class="about__content p-5">
+                <h1>About</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                
+                <h2>Skills</h2>
+
+                <!-- angular, react, node, html, css, aws, javascript, typescript, python, next js, ionic, bootstrap, -->
+                <div>
+                    <i class="fa-brands fa-react content__white-icon"></i>
+                    <i class="fa-brands fa-angular content__white-icon"></i>
+                    <i class="fa-brands fa-js content__white-icon"></i>
+                    <i class="fa-brands fa-python content__white-icon"></i>
+                    <i class="fa-brands fa-bootstrap content__white-icon"></i>
+                    <i class="fa-brands fa-html5 content__white-icon"></i>
+                    <i class="fa-brands fa-css3-alt content__white-icon"></i>
+                    <i class="fa-brands fa-aws content__white-icon"></i>
+                    <i class="fa-brands fa-node-js content__white-icon"></i>
+                    <i class="fa-brands fa-react content__white-icon"></i>
+                    <i class="fa-brands fa-react content__white-icon"></i>
+                </div>
+            </div>
+            
+        </div>
+
+        <div id="expirence" class="section  expirence-container d-flex flex-row align-items-center justify-content-center">
+           
+        </div>
+
+        <div id="education" class="section education-container d-flex justify-content-center align-items-center">
+        </div>
+        <div id="projects" class="section  expirence-container d-flex flex-row align-items-center justify-content-center">
+           
+        </div>
+        <div id="contact" class="section  expirence-container d-flex flex-row align-items-center justify-content-center">
+           
+        </div>
+
+        <footer></footer>
+
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script>
+        var TxtType = function (el, toRotate, period) {
+            this.toRotate = toRotate;
+            this.el = el;
+            this.loopNum = 0;
+            this.period = parseInt(period, 10) || 2000;
+            this.txt = '';
+            this.tick();
+            this.isDeleting = false;
+        };
+
+        TxtType.prototype.tick = function () {
+            var i = this.loopNum % this.toRotate.length;
+            var fullTxt = this.toRotate[i];
+
+            if (this.isDeleting) {
+                this.txt = fullTxt.substring(0, this.txt.length - 1);
+            } else {
+                this.txt = fullTxt.substring(0, this.txt.length + 1);
+            }
+
+            this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+            var that = this;
+            var delta = 200 - Math.random() * 100;
+
+            if (this.isDeleting) { delta /= 2; }
+
+            if (!this.isDeleting && this.txt === fullTxt) {
+                delta = this.period;
+                this.isDeleting = true;
+            } else if (this.isDeleting && this.txt === '') {
+                this.isDeleting = false;
+                this.loopNum++;
+                delta = 500;
+            }
+
+            setTimeout(function () {
+                that.tick();
+            }, delta);
+        };
+
+        window.onload = function () {
+            var elements = document.getElementsByClassName('typewrite');
+            for (var i = 0; i < elements.length; i++) {
+                var toRotate = elements[i].getAttribute('data-type');
+                var period = elements[i].getAttribute('data-period');
+                if (toRotate) {
+                    new TxtType(elements[i], JSON.parse(toRotate), period);
+                }
+            }
+            // INJECT CSS
+            var css = document.createElement("style");
+            css.type = "text/css";
+            css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+            document.body.appendChild(css);
+        };
+    </script>
 </body>
+
 </html>
